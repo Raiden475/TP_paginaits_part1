@@ -1,8 +1,9 @@
 :root {  
-    --color-principal: #007BFF;  
-    --color-secundario: #6C757D;  
-    --color-fondo: #f8f9fa;  
-    --color-texto: #343a40;  
+    --color-principal: #007BFF; /* Azul principal */  
+    --color-secundario: #28A745; /* Verde secundario */  
+    --color-fondo: #E9F5F2; /* Fondo claro verde-azulado */  
+    --color-texto: #2C3E50; /* Texto en gris oscuro para buen contraste */  
+    --color-marco: #4CAF50; /* Verde para el marco */  
 }  
 
 body {  
@@ -14,6 +15,7 @@ body {
 }  
 
 header {  
+    position: relative; /* Para posicionar el icono en la esquina superior derecha */  
     text-align: center;  
     padding: 20px;  
 }  
@@ -27,13 +29,16 @@ button {
     animation: fadeIn 1s;  
 }  
 
-.intro {  
+.intro, .cursos {  
     padding: 20px;  
-    text-align: center;  
-}  
-
-.cursos {  
-    padding: 20px;  
+    text-align: center; /* Centra el texto dentro de la sección */  
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Fuente tipo cómic */  
+    border: 2px solid var(--color-marco); /* Marco alrededor del texto */  
+    border-radius: 10px; /* Bordes redondeados para el marco */  
+    background-color: white; /* Fondo blanco para el texto dentro del marco */  
+    margin: 20px auto; /* Centra la sección y agrega margen vertical */  
+    max-width: 80%; /* Limita el ancho para mantener el texto centrado */  
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra para darle un efecto elevado */  
 }  
 
 footer {  
@@ -58,4 +63,53 @@ footer {
     button {  
         width: 100%;  
     }  
+}
+
+/* Estilos para el menú deslizable */
+.menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 500px; /* Aumenta el ancho del menú */
+    height: 100%;
+    background-color: var(--color-principal);
+    color: white;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    padding: 50px;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.3);
+}
+
+
+.menu.open {
+    transform: translateX(0);
+}
+
+.menu-content {
+    max-height: calc(100% - 60px);
+    overflow-y: auto;
+}
+
+.menu-close {
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu-close i {
+    color: white;
+}
+
+.menu-info {
+    margin-top: 20px;
+}
+
+/* Icono de menú en el header */
+.menu-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
 }

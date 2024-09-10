@@ -1,3 +1,13 @@
-document.getElementById('inscribirse').addEventListener('click', function() {  
-    alert('¡Gracias por tu interés en inscribirte! Pronto recibirás más información.');  
+document.addEventListener('DOMContentLoaded', () => {
+    const menuIcon = document.getElementById('menu-icon');
+    const menu = document.getElementById('menu');
+    const menuClose = document.getElementById('menu-close');
+
+    menuIcon.addEventListener('click', () => {
+        menu.classList.add('open');
+    });
+
+    menuClose.addEventListener('click', () => {
+        menu.classList.remove('open');
+    });
 });
