@@ -27,7 +27,16 @@ button {
     padding: 10px 15px;  
     cursor: pointer;  
     animation: fadeIn 1s;  
-}  
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Fuente tipo cómic */
+    border-radius: 5px; /* Bordes redondeados para el botón */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para el botón */
+}
+
+button:hover {
+    background-color: darken(var(--color-principal), 10%); /* Cambio de color en hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra más prominente en hover */
+}
+
 
 .intro, .cursos {  
     padding: 20px;  
